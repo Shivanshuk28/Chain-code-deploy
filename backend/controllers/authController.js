@@ -22,9 +22,7 @@ export const register = async (req, res) => {
 
     // Generate JWT
     const payload = { user: { id: user.id, walletAddress } };
-    const token = jwt.sign(payload, process.env.JWT_SECRET, {
-      expiresIn: "24h",
-    });
+    const token = jwt.sign(payload, process.env.JWT_SECRET,);
 
     res.json({ token });
   } catch (err) {
@@ -43,9 +41,7 @@ export const login = async (req, res) => {
     
     // Generate JWT
     const payload = { user: { id: user.id, walletAddress:user.walletAddress } };
-    const token = jwt.sign(payload, process.env.JWT_SECRET, {
-      expiresIn: "24h",
-    });
+    const token = jwt.sign(payload, process.env.JWT_SECRET,);
 
     res.json({ token });
   } catch (err) {
